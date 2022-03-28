@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from 'react';
 import Test from './components/Test';
+import Movie from './components/Movie';
 
 const App = () => {
 
@@ -10,14 +11,27 @@ const App = () => {
   useState renverra la valeur actuelle du "myVar" et une fonction pour mettre à jour le "myVar".
  */
 const [myVar, setMyVar] = useState('Hello World');
+const [movies, setMovies] = useState([]);
+
+
+function fetchMoviesHandler() {
+  fetch('https://swapi.dev/api/films/')
+  .then(response => {
+    console.log(response);
+    return response.json()
+  })
+  .then(data => {
+    console.log(data);
+    setMovies(data.results);
+  })
+}
 
 /*
 useEffect permet aux fonctions composants de gérer des effets de bord.
 */
 useEffect(() => {
-  // il s'affiche useEffect au console
-  console.log('useEffect');
-},[myVar]);
+  fetchMoviesHandler();
+},[]);
 
 const onClickHandler = () => {
 
@@ -37,12 +51,21 @@ const  childToParentUpdater = (data) => {
   console.log('childToParentUpdater',data);
 }
 
-return(
- <div className="App">
-  <button onClick={onClickHandler}>Click Me</button>
-	{myVar}
-  <Test myProps={myVar} updater={childToParentUpdater}/>
+return (
+  <div className="App">
+    <button onClick={onClickHandler}>ClickMe</button> 
+    {movies.map((movie,index) => {
+      return <Movie
+        key={index}
+        title={movie.title}
+        description={movie.description}
+        director={movie.director}
+        producer={movie.producer}
+        release_date={movie.release_date}
+      />
+    }
+  )}
   </div>
-)};
-
+);
+}
 export default App;
