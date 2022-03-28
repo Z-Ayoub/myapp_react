@@ -1,5 +1,5 @@
 # myapp_react
-NOM : ZINOU
-PRENOM : AYOUB
-ESI 4D 
+NOM : ZINOU |
+PRENOM : AYOUB |
+ESI 4D  | 
 ISITECH
