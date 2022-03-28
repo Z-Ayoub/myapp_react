@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Test from './components/Test';
 
 const App = () => {
@@ -11,6 +11,14 @@ const App = () => {
  */
 const [myVar, setMyVar] = useState('Hello World');
 
+/*
+useEffect permet aux fonctions composants de gérer des effets de bord.
+*/
+useEffect(() => {
+  // il s'affiche useEffect au console
+  console.log('useEffect');
+},[myVar]);
+
 const onClickHandler = () => {
 
   // on peut utiliser cette méthode
@@ -18,7 +26,7 @@ const onClickHandler = () => {
 
   // ou bien cette méthode pour mettre à jour << myVar >> lorsque l’utilisateur clique sur le bouton
  setMyVar((prevState) => {
-   return prevState + 'updated';
+   return prevState + ' updated';
  })
 }
 
