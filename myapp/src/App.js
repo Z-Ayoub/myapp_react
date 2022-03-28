@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+import Test from './components/Test';
 
 const App = () => {
 
@@ -21,10 +22,18 @@ const onClickHandler = () => {
  })
 }
 
+/* envoyer des données d'un composant enfant à son parent en tant 
+que prop
+*/
+const  childToParentUpdater = (data) => {
+  console.log('childToParentUpdater',data);
+}
+
 return(
  <div className="App">
   <button onClick={onClickHandler}>Click Me</button>
 	{myVar}
+  <Test myProps={myVar} updater={childToParentUpdater}/>
   </div>
 )};
 
