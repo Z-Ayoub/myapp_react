@@ -53,7 +53,7 @@ const  childToParentUpdater = (data) => {
 
 return (
   <div className="App">
-    <button onClick={onClickHandler}>ClickMe</button> 
+    <button onClick={onClickHandler} className="error_btn">ClickMe</button> 
     {movies.map((movie,index) => {
       return <Movie
         key={index}

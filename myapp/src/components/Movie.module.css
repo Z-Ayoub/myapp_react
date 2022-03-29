@@ -1,3 +1,24 @@
 .divv{
-    background-color: aquamarine;
+    background-color: #AED6F1;
+    text-align:center;
+    border: thick double #2874A6;
+    padding: 8px 12px;
+}
+
+.title{
+        text-decoration: underline solid black; 
+        text-transform: uppercase;
+        text-shadow: 4px 3px 0px #fff, 9px 8px 0px rgba(0,0,0,0.15);
+}
+
+.director{
+    font-family: cursive;
+}
+
+.producer{
+    font-family: sans-serif;
+}
+
+.release_date{
+    font-family: fantasy;
 }
