@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import Test from './components/Test';
 import Movie from './components/Movie';
+import AddMovie from './components/AddMovie';
 import { Link } from "react-router-dom";
 
 const App = () => {
@@ -59,6 +60,9 @@ return (
       <Link to="/About" className="links">About</Link>
     </div>
 
+    
+    <AddMovie />
+
     {movies.map((movie,index) => {
       return <Movie
         key={index}
@@ -70,6 +74,7 @@ return (
       />
     }
     )}
+
   </div>
 );
 }
