@@ -3,6 +3,7 @@ import './App.css';
 import {useEffect, useState} from 'react';
 import Test from './components/Test';
 import Movie from './components/Movie';
+import { Link } from "react-router-dom";
 
 const App = () => {
 
